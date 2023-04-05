@@ -33,6 +33,7 @@
             padding: 5px;
             color: @secondary-color;
             text-decoration: none;
+
             &:hover {
                 position: relative;
                 top: -2px;
@@ -44,7 +45,20 @@
     &__search {
         display: flex;
 
+        &-link {
+            padding: 5px;
+            color: @secondary-color;
+            text-decoration: none;
+
+            &:hover {
+                position: relative;
+                top: -2px;
+                border-bottom: 2px solid @brand-color;
+            }
+        }
+
         &-input {
+            margin-left: 20px;
             outline: none;
             border: none;
             border-top-left-radius: 5px;

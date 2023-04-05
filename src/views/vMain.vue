@@ -21,7 +21,9 @@
                 v-for="item in products"
                 :key="item.id"
                 :image="item.image"
-                ><img :src="require(`@/assets/${item.image}`)" :alt="item.image"
+                ><img
+                    :src="require(`@/assets/${item.image}`)"
+                    :alt="item.image"
             /></swiper-slide>
         </swiper>
         <hr />
@@ -48,7 +50,8 @@ import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper';
 
 import vCard from '@/components/vCard/vCard.vue';
-import products from '@/products';
+
+import { mapState } from 'vuex';
 
 export default {
     components: {
@@ -56,10 +59,13 @@ export default {
         SwiperSlide,
         vCard,
     },
-    data() {
-        return {
-            products: products,
-        };
+    computed: {
+        ...mapState({
+            products: (state) => state,
+        }),
+        mappedProducts() {
+            return this.products;
+        },
     },
     setup() {
         return {

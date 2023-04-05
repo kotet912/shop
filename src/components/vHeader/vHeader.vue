@@ -18,7 +18,11 @@
                     >
                 </li>
             </ul>
+            
             <div class="header__search">
+                <router-link class="header__search-link" to="/basket"
+                        >Корзина</router-link
+                    >
                 <input
                     class="header__search-input"
                     type="text"

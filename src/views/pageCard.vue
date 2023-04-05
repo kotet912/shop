@@ -14,7 +14,18 @@
                 <p class="pageCard__container__price">
                     Цена: {{ product.price }}
                 </p>
-                <button class="pageCard__container__btn">Купить</button>
+                <button
+                    v-if="!product.count"
+                    class="pageCard__container__btn"
+                    @click="addBasket()"
+                >
+                    Купить
+                </button>
+                <div v-if="product.count">
+                    <button @click="increment()">+</button>
+                    <input type="text" v-model="product.count" />
+                    <button @click="decrement()">-</button>
+                </div>
             </div>
         </div>
         <swiper
@@ -54,7 +65,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper';
 
-import products from '@/products';
+import { mapState } from 'vuex';
 
 export default {
     name: 'pageCard',
@@ -68,13 +79,20 @@ export default {
             required: true,
         },
     },
-    data: () => ({ products }),
+
     setup: () => ({ modules: [Autoplay, Pagination, Navigation] }),
     computed: {
+        ...mapState({
+            products: (state) => state,
+        }),
+        mappedProducts() {
+            return this.products;
+        },
         product() {
-            return products.find((item) => item.id === this.id);
+            return this.products.find((item) => item.id === this.id);
         },
     },
+
     methods: {
         selectSlide(product) {
             this.$router.push({
@@ -83,6 +101,17 @@ export default {
                     id: product.id,
                 },
             });
+        },
+        addBasket() {
+            this.product.count = 1;
+        },
+        increment() {
+            this.product.count++;
+        },
+        decrement() {
+            if (this.product.count > 0) {
+                this.product.count--;
+            }
         },
     },
 };

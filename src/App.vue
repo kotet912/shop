@@ -9,7 +9,7 @@
         />
         <div v-else>
             <vHeader />
-            <router-view></router-view>
+            <router-view/>
             <vFooter />
         </div>
     </main>
@@ -26,7 +26,7 @@ export default {
     data() {
         return {
             loading: true,
-            loadingTime: 2,
+            loadingTime: 1,
             colorLoader: `#40c000`,
         };
     },
