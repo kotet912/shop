@@ -63,9 +63,7 @@ export default {
         ...mapState({
             products: (state) => state,
         }),
-        mappedProducts() {
-            return this.products;
-        },
+        
     },
     setup() {
         return {

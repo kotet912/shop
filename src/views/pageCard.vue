@@ -21,10 +21,10 @@
                 >
                     Купить
                 </button>
-                <div v-if="product.count">
-                    <button @click="increment()">+</button>
+                <div v-if="product.count" class="pageCard__container__count">
+                    <button @click="increment()"  class="pageCard__container__count__btn">+</button>
                     <input type="text" v-model="product.count" />
-                    <button @click="decrement()">-</button>
+                    <button @click="decrement()"  class="pageCard__container__count__btn">-</button>
                 </div>
             </div>
         </div>
@@ -79,15 +79,11 @@ export default {
             required: true,
         },
     },
-
     setup: () => ({ modules: [Autoplay, Pagination, Navigation] }),
     computed: {
         ...mapState({
             products: (state) => state,
         }),
-        mappedProducts() {
-            return this.products;
-        },
         product() {
             return this.products.find((item) => item.id === this.id);
         },
