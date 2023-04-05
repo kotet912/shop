@@ -24,6 +24,7 @@
                 ><img
                     :src="require(`@/assets/${item.image}`)"
                     :alt="item.image"
+                    @click="selectSlide(item)"
             /></swiper-slide>
         </swiper>
         <hr />
@@ -63,6 +64,11 @@ export default {
         ...mapState({
             products: (state) => state,
         }),
+    },
+    methods: {
+        selectSlide({ id }) {
+            this.$router.push({ name: 'pageCard', params: { id } });
+        },
     },
     setup: () => ({ modules: [Autoplay, Pagination, Navigation] }),
 };
