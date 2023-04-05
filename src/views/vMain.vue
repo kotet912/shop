@@ -63,13 +63,8 @@ export default {
         ...mapState({
             products: (state) => state,
         }),
-        
     },
-    setup() {
-        return {
-            modules: [Autoplay, Pagination, Navigation],
-        };
-    },
+    setup: () => ({ modules: [Autoplay, Pagination, Navigation] }),
 };
 </script>
 <style src="./vMain.less" lang="less" />

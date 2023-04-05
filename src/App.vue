@@ -9,7 +9,7 @@
         />
         <div v-else>
             <vHeader />
-            <router-view/>
+            <router-view />
             <vFooter />
         </div>
     </main>
@@ -23,14 +23,7 @@ import vFooter from './components/vFooter/vFooter.vue';
 
 export default {
     name: 'App',
-    data() {
-        return {
-            loading: true,
-            loadingTime: 1,
-            colorLoader: `#40c000`,
-        };
-    },
-    computed: {},
+    data: () => ({ loading: true, loadingTime: 1, colorLoader: `#40c000` }),
     components: {
         ScaleLoader,
         vHeader,

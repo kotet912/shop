@@ -14,8 +14,9 @@
                 name: 'pageCard',
                 params: { id },
             }"
-            >Заказать</router-link
         >
+            Заказать
+        </router-link>
     </section>
 </template>
 
@@ -49,4 +50,4 @@ export default {
 };
 </script>
 
-<style src="./vCard.less" lang="less"/>
+<style src="./vCard.less" lang="less" />

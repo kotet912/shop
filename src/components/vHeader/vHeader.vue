@@ -18,11 +18,11 @@
                     >
                 </li>
             </ul>
-            
+
             <div class="header__search">
                 <router-link class="header__search-link" to="/basket"
-                        >Корзина</router-link
-                    >
+                    >Корзина</router-link
+                >
                 <input
                     class="header__search-input"
                     type="text"
@@ -37,15 +37,7 @@
 <script>
 export default {
     name: 'vHeader',
-
-    data() {
-        return {};
-    },
-
-    mounted() {},
-
-    methods: {},
 };
 </script>
 
-<style src="./vHeader.less" lang="less"/>
+<style src="./vHeader.less" lang="less" />
