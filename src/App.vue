@@ -1,26 +1,47 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <main id="app">
+        <ScaleLoader
+            class="vLoader"
+            :style="{ '--time': `${loadingTime}s` }"
+            :loading="loading"
+            :color="colorLoader"
+            v-if="loading"
+        />
+        <div v-else>
+            <vHeader />
+            <router-view></router-view>
+            <vFooter />
+        </div>
+    </main>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ScaleLoader from 'vue-spinner/src/ScaleLoader.vue';
+
+import vHeader from './components/vHeader/vHeader.vue';
+import vFooter from './components/vFooter/vFooter.vue';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+    name: 'App',
+    data() {
+        return {
+            loading: true,
+            loadingTime: 2,
+            colorLoader: `#40c000`,
+        };
+    },
+    computed: {},
+    components: {
+        ScaleLoader,
+        vHeader,
+        vFooter,
+    },
+    created() {
+        setTimeout(() => {
+            this.loading = false;
+        }, this.loadingTime * 1000);
+    },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style src="./App.less" lang="less" />

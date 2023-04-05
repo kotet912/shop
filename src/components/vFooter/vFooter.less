@@ -1,0 +1,41 @@
+@import '@/assets/variables/variables.less';
+
+.footer {
+    animation: fromTheBottom 0.5s;
+    background-color: @main-color;
+    padding: 10px 0;
+    width: 100%;
+    color: @secondary-color;
+    &__content {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+
+    &__menu {
+        display: flex;
+
+        li {
+            margin-right: 30px;
+
+            a {
+                color: @secondary-color;
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__social {
+        display: flex;
+        align-items: center;
+
+        a {
+            margin-left: 20px;
+            color: @secondary-color;
+            font-size: 24px;
+            text-decoration: none;
+        }
+    }
+}
