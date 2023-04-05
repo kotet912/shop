@@ -7,7 +7,7 @@
         />
         <h2 class="card__title">{{ title }}</h2>
         <p class="card__description">{{ description }}</p>
-        <p class="card__price">{{ price }}</p>
+        <p class="card__price">{{ price }}$</p>
         <router-link
             class="card__link"
             :to="{
@@ -43,7 +43,7 @@ export default {
             required: true,
         },
         price: {
-            type: String,
+            type: Number,
             required: true,
         },
     },

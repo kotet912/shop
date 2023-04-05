@@ -1,2 +1,58 @@
 @import '@/assets/variables/variables.less';
 
+.page {
+    .page__basket {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      padding: 20px;
+      min-height: 500px;
+      max-width: 700px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 6px;
+      background-color: #fff;
+      overflow: hidden;
+      .page__basket-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        .page__basket-total-price {
+          font-size: 16px;
+          font-weight: 700;
+        }
+      }
+      .page__basket-table {
+        width: 100%;
+        border-collapse: collapse;
+        th {
+          text-align: left;
+          font-size: 14px;
+          font-weight: 700;
+          padding: 10px;
+          background-color: #f9f9f9;
+        }
+        td {
+          font-size: 14px;
+          font-weight: 400;
+          padding: 15px 10px;
+          border-bottom: 1px solid #f1f1f1;
+          &:first-child {
+            width: 120px;
+            .page__basket-table-image {
+              display: block;
+              width: 100%;
+              height: auto;
+            }
+          }
+          &:nth-child(3),
+          &:last-child {
+            text-align: right;
+          }
+          &:last-child {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }

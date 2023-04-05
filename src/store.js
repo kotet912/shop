@@ -7,7 +7,7 @@ const store = createStore({
             image: 'wondicon.png',
             title: 'Product 1',
             description: 'Description 1',
-            price: '10$',
+            price: 10,
             count: 0,
         },
         {
@@ -15,7 +15,7 @@ const store = createStore({
             image: 'wondicon.png',
             title: 'Product 2',
             description: 'Description 2',
-            price: '15$',
+            price: 15,
             count: 0,
         },
         {
@@ -23,7 +23,7 @@ const store = createStore({
             image: 'wondicon.png',
             title: 'Product 3',
             description: 'Description 3',
-            price: '20$',
+            price: 20,
             count: 0,
         },
         {
@@ -31,7 +31,7 @@ const store = createStore({
             image: 'wondicon.png',
             title: 'Product 4',
             description: 'Description 4',
-            price: '25$',
+            price: 25,
             count: 0,
         },
         {
@@ -39,7 +39,7 @@ const store = createStore({
             image: 'wondicon.png',
             title: 'Product 5',
             description: 'Description 5',
-            price: '30$',
+            price: 30,
             count: 0,
         },
         {
@@ -47,7 +47,7 @@ const store = createStore({
             image: 'logo.png',
             title: 'Product 6',
             description: 'Description 6',
-            price: '35$',
+            price: 35,
             count: 0,
         },
     ],

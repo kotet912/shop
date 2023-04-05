@@ -12,7 +12,7 @@
                     {{ product.description }}
                 </p>
                 <p class="pageCard__container__price">
-                    Цена: {{ product.price }}
+                    Цена: {{ product.price }}$
                 </p>
                 <button
                     v-if="!product.count"
