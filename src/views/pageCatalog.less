@@ -1,0 +1,44 @@
+@import '@/assets/variables/variables.less';
+
+.pageCatalog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    span {
+        opacity: 0.1;
+        border-bottom: 1px solid @main-color;
+        width: 97%;
+    }
+    &__box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 100%;
+        height: 200px;
+        &__input {
+            border-bottom: 1px solid @main-color;
+            min-width: 65%;
+            font-size: 20px;
+            &:hover,
+            &:target,
+            &:active,
+            &:focus{
+            border-bottom: 1px solid @brand-color;
+            }
+        }
+    }
+
+    &__container {
+        &__filter {
+        }
+        &__products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        &__vCard {
+        }
+    }
+}

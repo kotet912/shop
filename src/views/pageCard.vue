@@ -26,14 +26,14 @@
                         @click="product.count++"
                         class="pageCard__container__count__btn"
                     >
-                        
+                        +
                     </button>
                     <input type="text" v-model="product.count" />
                     <button
                         @click="product.count--"
                         class="pageCard__container__count__btn"
                     >
-                        
+                        -
                     </button>
                 </div>
             </div>

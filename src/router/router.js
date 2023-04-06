@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import vMain from '@/views/vMain.vue';
 import pageCard from '@/views/pageCard.vue';
 import pageBasket from '@/views/pageBasket.vue';
+import pageCatalog from '@/views/pageCatalog.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -21,6 +22,11 @@ const router = createRouter({
             path: '/basket',
             name: 'pageBasket',
             component: pageBasket,
+        },
+        {
+            path: '/catalog',
+            name: 'pageCatalog',
+            component: pageCatalog,
         },
     ],
 });
