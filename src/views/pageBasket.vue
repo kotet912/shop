@@ -11,9 +11,7 @@
             <table class="page__basket-table">
                 <thead>
                     <tr>
-                        <th class="page__basket-table-header">
-                            Изображение товара
-                        </th>
+                        <th class="page__basket-table-header">Товар</th>
                         <th class="page__basket-table-header">Название</th>
                         <th class="page__basket-table-header">Цена</th>
                         <th class="page__basket-table-header">Количество</th>
@@ -42,7 +40,19 @@
                             {{ product.price }}$
                         </td>
                         <td class="page__basket-table-cell">
+                            <button
+                                @click="product.count++"
+                                class="page__basket-table-cell-btn"
+                            >
+                                +
+                            </button>
                             {{ product.count }}
+                            <button
+                                @click="product.count--"
+                                class="page__basket-table-cell-btn-decr"
+                            >
+                                -
+                            </button>
                         </td>
                         <td class="page__basket-table-cell">
                             {{ product.count * product.price }}$
@@ -79,7 +89,9 @@ export default {
     },
     mounted() {},
 
-    methods: {},
+    methods: {
+       
+    },
 };
 </script>
 

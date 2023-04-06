@@ -17,30 +17,30 @@
                 <button
                     v-if="!product.count"
                     class="pageCard__container__btn"
-                    @click="addBasket()"
+                    @click="product.count++"
                 >
                     Купить
                 </button>
                 <div v-if="product.count" class="pageCard__container__count">
                     <button
-                        @click="increment()"
+                        @click="product.count++"
                         class="pageCard__container__count__btn"
                     >
-                        +
+                        
                     </button>
                     <input type="text" v-model="product.count" />
                     <button
-                        @click="decrement()"
+                        @click="product.count--"
                         class="pageCard__container__count__btn"
                     >
-                        -
+                        
                     </button>
                 </div>
             </div>
         </div>
         <swiper
             :slidesPerView="4"
-            :slidesPerGroup="2"
+            :slidesPerGroup="3"
             :spaceBetween="30"
             :centeredSlides="true"
             :loop="true"
@@ -102,18 +102,6 @@ export default {
     methods: {
         selectSlide({ id }) {
             this.$router.push({ name: 'pageCard', params: { id } });
-        },
-
-        addBasket() {
-            this.product.count = 1;
-        },
-        increment() {
-            this.product.count++;
-        },
-        decrement() {
-            if (this.product.count > 0) {
-                this.product.count--;
-            }
         },
     },
 };

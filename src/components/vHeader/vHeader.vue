@@ -21,8 +21,9 @@
 
             <div class="header__search">
                 <router-link class="header__search-link" to="/basket"
-                    >Корзина</router-link
+                    >Корзина </router-link
                 >
+                <label class="header__search-count"> {{ cartItems.length }}</label>
                 <input
                     class="header__search-input"
                     type="text"
@@ -35,8 +36,18 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
     name: 'vHeader',
+    computed: {
+        ...mapState({
+            products: (state) => state,
+        }),
+        cartItems() {
+            return this.$store.state.filter((product) => product.count > 0);
+        },
+    },
 };
 </script>
 
