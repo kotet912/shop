@@ -11,14 +11,23 @@
         <div class="pageCatalog__container">
             <div class="pageCatalog__container__filter">
                 Сортировка:
-                <select v-model="sortType" >
-                    <option value=""></option>
+                <select
+                    v-model="filterValue"
+                    @change="setFilterValue(filterValue)"
+                >
+                    <option
+                        v-for="option in sortOptions"
+                        :key="option.value"
+                        :value="option.value"
+                    >
+                        {{ option.title }}
+                    </option>
                 </select>
             </div>
             <div class="pageCatalog__container__products">
                 <vCard
                     class="pageCatalog__container__vCard"
-                    v-for="item in products"
+                    v-for="item in sortedProducts"
                     :key="item.id"
                     :id="item.id"
                     :image="item.image"
@@ -32,7 +41,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapGetters, mapMutations } from 'vuex';
 import vCard from '@/components/vCard/vCard.vue';
 
 export default {
@@ -40,19 +49,25 @@ export default {
     components: {
         vCard,
     },
+
     computed: {
         ...mapState({
-            products: (state) => state,
+            sortOptions: (state) => state.sortOptions,
         }),
+        ...mapGetters(['sortedProducts']),
     },
 
     data() {
-        return {};
+        return {
+            filterValue: 'priceUp',
+        };
     },
 
     mounted() {},
 
-    methods: {},
+    methods: {
+        ...mapMutations(['setFilterValue']),
+    },
 };
 </script>
 

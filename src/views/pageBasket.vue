@@ -75,10 +75,10 @@ export default {
     },
     computed: {
         ...mapState({
-            products: (state) => state,
+            products: (state) => state.products,
         }),
         cartItems() {
-            return this.$store.state.filter((product) => product.count > 0);
+            return this.$store.state.products.filter((product) => product.count > 0);
         },
         totalPrice() {
             return this.cartItems.reduce(

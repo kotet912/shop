@@ -92,7 +92,7 @@ export default {
     setup: () => ({ modules: [Autoplay, Pagination, Navigation] }),
     computed: {
         ...mapState({
-            products: (state) => state,
+            products: (state) => state.products,
         }),
         product() {
             return this.products.find((item) => item.id === this.id);
