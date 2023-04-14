@@ -1,83 +1,109 @@
 @import '@/assets/variables/variables.less';
 
 .page {
-    &__basket {
-        display: flex;
-        flex-direction: column;
-        margin: 0 auto;
-        box-shadow: 0 4px 8px @third-color;
-        border-radius: 6px;
-        background-color: @secondary-color;
-        padding: 20px;
-        max-width: 700px;
-        min-height: 500px;
-        overflow: hidden;
-        &-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            .page__basket-total-price {
-                font-weight: 700;
-            }
-        }
-        &-table {
-            border-collapse: collapse;
-            width: 100%;
-            th {
-                background-color: #f9f9f9;
-                padding: 10px;
-                font-weight: 700;
-                font-size: 14px;
-                text-align: left;
-            }
-            td {
-                border-bottom: 1px solid #f1f1f1;
-                padding: 15px 10px;
-                font-weight: 400;
-                font-size: 14px;
-
-                &:first-child {
-                    width: 120px;
-                    .page__basket-table-image {
-                        display: block;
-                        width: 100%;
-                        height: auto;
-                    }
-                }
-                &:nth-child(3),
-                &:last-child {
-                    text-align: right;
-                }
-                &:last-child {
-                    font-weight: 700;
-                }
-            }
-            &-cell-btn {
-                cursor: pointer;
-                border: none;
-                border-radius: 5px;
-                background-color: @brand-color;
-                width: 20px;
-                height: 20px;
-                color: @secondary-color;
-                &:hover {
-                    background-color: @hovBrand-color;
-                }
-                &-decr {
-                    cursor: pointer;
-                    border: none;
-                    border-radius: 5px;
-                    background-color: @brand-color;
-                    padding-bottom: 1px;
-                    width: 20px;
-                    height: 20px;
-                    color: @secondary-color;
-                    &:hover {
-                        background-color: @hovBrand-color;
-                    }
-                }
-            }
-        }
+  min-height: 90vh;
+  &__basket {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px @third-color;
+    border-radius: 6px;
+    background-color: @secondary-color;
+    padding: 20px;
+    max-width: 700px;
+    overflow: hidden;
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      .page__basket-total-price {
+        font-weight: 700;
+      }
     }
+    &-btnPay {
+      cursor: pointer;
+      outline: none;
+      border: none;
+      border-radius: 5px;
+      background-color: @brand-color;
+      padding: 5px 10px;
+      color: @secondary-color;
+      font-size: 16px;
+      &:hover {
+        background-color: @hovBrand-color;
+      }
+      &:active {
+        filter: brightness(0.8);
+        background-color: @hovBrand-color;
+      }
+    }
+    &-table {
+      border-collapse: collapse;
+      width: 100%;
+      th {
+        background-color: #f9f9f9;
+        padding: 10px;
+        font-weight: 700;
+        font-size: 14px;
+        text-align: left;
+      }
+      td {
+        border-bottom: 1px solid #f1f1f1;
+        padding: 15px 10px;
+        font-weight: 400;
+        font-size: 14px;
+
+        &:first-child {
+          width: 120px;
+          .page__basket-table-image {
+            display: block;
+            width: 100%;
+            height: auto;
+          }
+        }
+        &:nth-child(3),
+        &:last-child {
+          text-align: right;
+        }
+        &:last-child {
+          font-weight: 700;
+        }
+      }
+      &-cell-btn {
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: @brand-color;
+        width: 20px;
+        height: 20px;
+        color: @secondary-color;
+        &:hover {
+          background-color: @hovBrand-color;
+        }
+        &:active {
+          filter: brightness(0.8);
+          background-color: @hovBrand-color;
+        }
+        &-decr {
+          cursor: pointer;
+          border: none;
+          border-radius: 5px;
+          background-color: @brand-color;
+          padding-bottom: 1px;
+          width: 20px;
+          height: 20px;
+          color: @secondary-color;
+          &:hover {
+            background-color: @hovBrand-color;
+          }
+          &:active {
+            filter: brightness(0.8);
+            background-color: @hovBrand-color;
+          }
+        }
+      }
+    }
+  }
 }

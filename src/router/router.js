@@ -3,6 +3,7 @@ import vMain from '@/views/vMain.vue';
 import pageCard from '@/views/pageCard.vue';
 import pageBasket from '@/views/pageBasket.vue';
 import pageCatalog from '@/views/pageCatalog.vue';
+import pageOrder from '@/views/pageOrder.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -27,6 +28,11 @@ const router = createRouter({
             path: '/catalog',
             name: 'pageCatalog',
             component: pageCatalog,
+        },
+        {
+            path: '/order',
+            name: 'pageOrder',
+            component: pageOrder,
         },
     ],
 });
